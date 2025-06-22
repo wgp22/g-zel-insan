@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>İyi ki Doğdun Güzel Insan</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 40px;
+      color: #333;
+    }
+    .line {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+      font-size: 1.2em;
+      margin: 12px 0;
+    }
+    .line.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    img {
+      width: 220px;
+      border-radius: 10px;
+      margin: 15px;
+      opacity: 0;
+      transition: all 0.8s ease;
+    }
+    img.visible {
+      opacity: 1;
+    }
+    .music-button {
+      margin-top: 20px;
+      background-color: #ff6b81;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      font-size: 1em;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>İyi ki Doğdun Fıstığımm Benimm 🎂</h1>
+
+  <button class="music-button" onclick="document.getElementById('muzik').play(); this.style.display='none';">
+    🎵 Müzik Çalsın
+  </button>
+
+  <audio id="muzik" loop>
+    <source src="https://drive.google.com/uc?export=download&id=1qWw9k1JEaIlYW6NJyqw1pIQQtxNf6KGa" type="audio/mpeg">
+    Tarayıcınız ses çalmayı desteklemiyor.
+  </audio>
+
+  <div id="mektup">
+    <div class="line">Bugün senin günün… ve ben bu özel günde sana olan sevgimi anlatmak istedim.</div>
+    <div class="line">Hayatımın en güzel anları seninle başladı.</div>
+    <div class="line">Gülüşünle aydınlandı karanlıklarım, sesinle huzur buldu kalbim.</div>
+    <div class="line">Seninle birlikte her şey daha anlamlı, daha güzel.</div>
+    <div class="line">İyi ki doğdun, iyi ki varsın.</div>
+    <div class="line">Her doğum gününde sana yeniden aşık oluyorum ve bu tarif edilmez bir mutluluk ve yaşam kaynağı benim için.</div>
+    <div class="line">Birlikte geçireceğimiz nice güzel yaşlarımız, kahkahalarımız olsun.</div>
+    <div class="line">Doğum günün kutlu olsun canımın içi… 💫</div>
+  </div>
+
+  <div>
+    <img src="https://drive.google.com/uc?export=view&id=1oRqMX7ZdSWVf_fRdGN69hXm5-idHZH3U" alt="foto1">
+    <img src="https://drive.google.com/uc?export=view&id=19xyNUEibADsgPCdtTM0CbWdYS0h2l7vG" alt="foto2">
+    <img src="https://drive.google.com/uc?export=view&id=16QZMcq35fBMplO3NEM79mTpajfUp8aBe" alt="foto3">
+  </div>
+
+  <script>
+    const lines = document.querySelectorAll('.line');
+    lines.forEach((line, i) => {
+      setTimeout(() => {
+        line.classList.add('visible');
+      }, i * 1000);
+    });
+
+    const images = document.querySelectorAll('img');
+    images.forEach((img, i) => {
+      setTimeout(() => {
+        img.classList.add('visible');
+      }, (lines.length + i) * 1000);
+    });
+  </script>
+
+</body>
+</html>
